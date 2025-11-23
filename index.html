@@ -44,6 +44,15 @@
       const myPara = document.createElement('p');
       myPara.textContent = `Hometown: ${obj.homeTown} // Formed: ${obj.formed}`;
       header.appendChild(myPara);
+
+      // 計算三位成員的總年齡
+      const totalAge = obj.members.reduce((sum, member) => sum + member.age, 0);
+      const agePara = document.createElement('p');
+      agePara.textContent = `Total Age of All Members: ${totalAge.toLocaleString()} years`;
+      agePara.style.color = '#764ba2';
+      agePara.style.fontWeight = 'bold';
+      agePara.style.fontSize = '1.2rem';
+      header.appendChild(agePara);
     }
 
     function populateHeroes(obj) {
